@@ -77,14 +77,68 @@
 
 <?php 
     require "other_bird.php";
-    $other_bird = new OtherBird("sparrow");
-    var_dump($other_bird);
+    // $other_bird = new OtherBird("sparrow");
     echo "<br>";
+
     $data = [
         "type" => "sparrow",
         "color" => "white",
         "age" => 2,
         "areas" => ["europe", "north america", "asia"],
     ];
-    // var_dump($data);
+    $other_bird = new OtherBird($data);
+    var_dump($other_bird);
+
+    echo "<br>";
+    echo "------------------------------------------------------------------------------------------------------";
+    echo "<br>";
 ?>
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<h2>Utiliser l'encapsulation</h2>
+
+<?php 
+    require "student.php";
+    $student = new Student();
+    // $student->name="Timmy";
+    // $student->age=35;
+    // var_dump($student);
+    // echo "<br>";
+    // $student->setName("Timmy"); 
+    // $student->setAge(32);
+    // var_dump($student); 
+    // echo "<br>";
+    $student1 = new student();
+    // $student1->setName("a");
+    // $student1->setAge(1250);
+    // var_dump($student1); 
+    // echo "<br>";
+    try {
+        $student->setName("a");
+        $student->setAge(1250);
+    }
+    catch(\Exception $e) {
+        echo $e->getMessage();
+    }
+    echo "<br>";
+?>
+
+<?php 
+    echo "<br>";
+    require "book.php";
+    // $book = new Book();
+    // $book->setTitle("The rain");
+    // $book->setPages(246);
+    // var_dump($book);
+    $data = [
+        "title"=>"The rain",
+        "pages"=>246,
+    ];
+    $book = new Book($data);
+    var_dump($book);
+    echo "<br>" . $book->getTitle() . " has " . $book->getPages() . " pages."; 
+
+    echo "<br>";
+    echo "------------------------------------------------------------------------------------------------------";
+    echo "<br>";
+?>
+<!-- ---------------------------------------------------------------------------------------------------------- -->
