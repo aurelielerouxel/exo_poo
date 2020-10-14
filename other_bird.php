@@ -1,13 +1,17 @@
 <?php 
     class OtherBird {
-        public string $type = "sparrow";
-        public string $color = "grey";
-        public int $age = 5;
-        public array $areas = ["europe", "north america", "asia"];
+        public string $type;
+        public string $color;
+        public int $age;
+        public array $areas;
 
-        public function __construct($type) {
+        public function __construct($data) {
             // echo "<br>The object has been instantiated";
-            $this->type = $type;
+            $this->type = $data["type"];
+            $this->color = $data["color"];
+            $this->age = $data["age"];
+            $this->areas = $data["areas"];
+
         }
         // public function __construct($data) {
         //     $this->type = $data;
