@@ -87,4 +87,16 @@
         "areas" => ["europe", "north america", "asia"],
     ];
     // var_dump($data);
+    echo "<br>";
+    echo "------------------------------------------------------------------------------------------------------";
+    echo "<br>";
+?>
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<h2>Utiliser l'encapsulation</h2>
+
+<?php 
+    require "student.php";
+    $student = new Student();
+    var_dump($student);
+    $student->setName();
 ?>
