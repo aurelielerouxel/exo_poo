@@ -143,13 +143,22 @@
 ?>
 <!-- ---------------------------------------------------------------------------------------------------------- -->
 <h2>Travailler les propriétés et les méthodes.</h2>
+<h2>Utiliser le constructeur d'objet</h2>
 <?php 
     require "city.php";
 
-    $city = new City();
-    $city->setVille("Coutances");
-    $city->setDepartement(50);
-    var_dump($city);
+    $city = new City("Coutances", 50);
+    // $ville->setVille("Coutances");
+    // $ville->setDepartement(50);
+
+    // $data = [
+    //     "ville"=>"Coutances",
+    //     "departement"=>50,
+    // ];
+    // $ville = new City($data);
+
+    // var_dump($ville);
+
     echo $city->showLocation();
     echo "<br>";
     echo "------------------------------------------------------------------------------------------------------";
