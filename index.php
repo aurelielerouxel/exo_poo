@@ -195,5 +195,28 @@
 <!-- ---------------------------------------------------------------------------------------------------------- -->
 <h2>La poo appliquée à un formulaire</h2>
 <?php 
-    require "classes/formulaire.php";
+    require "classes/form.class.php";
+    
+    // $form = new Form (array(
+    //     "username" => "Aurélie"
+    // ));
+    $form = new Form($_POST);
+    // var_dump($form);
+    // die();
+    // echo $form->input('username');
+    // echo $form->input('password');
+    // echo $form->submit();
 ?>
+<form action="#" method="post">
+    <?php 
+        echo $form->setText('username');
+        echo $form->setText('password');
+        echo $form->setSubmit();
+        echo "<br>";
+        echo "<p>#tu n'es pas de notre galaxie</p>";
+        echo "------------------------------------------------------------------------------------------------------";
+        echo "<br>";
+    ?>
+</form>
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<h2></h2>
