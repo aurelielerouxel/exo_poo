@@ -11,6 +11,16 @@
         // }
 
         protected $ban;
+
+        public function getNom() {
+            parent::getNom();
+            echo ' (depuis la classe étendue)<br>';
+        }
+
+        public function __construct($n, $p) {
+            $this->user_name = strtoupper($n);
+            $this->user_pass = $p;
+        }
         public function setBan($b) {
             $this->ban[] .=$b;
         }
