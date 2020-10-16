@@ -1,7 +1,7 @@
 <!-- Découvrez les classes------------------------------------------------------------------------------------- -->
 <h2>Découvrez les classes</h2>
 <?php 
-    require "dog.php";
+    require "classes/dog.class.php";
 
     $dog1 = new Dog();
     var_dump($dog1);
@@ -13,7 +13,7 @@
 ?>
 
 <?php 
-    require "customer.php";
+    require "classes/customer.class.php";
 
     $customer = new Customer();
     var_dump($customer);
@@ -67,7 +67,7 @@
 <h2>Ajouter des méthodes</h2>
 <!-- Ajouter des méthodes -->
 <?php 
-    require "birds.php";
+    require "classes/birds.class.php";
     $bird = new Bird();
     var_dump($bird);
     $bird->sing();
@@ -76,7 +76,7 @@
 ?>
 
 <?php 
-    require "other_bird.php";
+    require "classes/other_bird.class.php";
     // $other_bird = new OtherBird("sparrow");
     echo "<br>";
 
@@ -97,7 +97,7 @@
 <h2>Utiliser l'encapsulation</h2>
 
 <?php 
-    require "student.php";
+    require "classes/student.class.php";
     $student = new Student();
     // $student->name="Timmy";
     // $student->age=35;
@@ -124,7 +124,7 @@
 
 <?php 
     echo "<br>";
-    require "book.php";
+    require "classes/book.class.php";
     // $book = new Book();
     // $book->setTitle("The rain");
     // $book->setPages(246);
@@ -145,7 +145,7 @@
 <h2>Travailler les propriétés et les méthodes.</h2>
 <h2>Utiliser le constructeur d'objet</h2>
 <?php 
-    require "city.php";
+    require "classes/city.class.php";
 
     $city = new City("Coutances", 50);
     // $ville->setVille("Coutances");
@@ -165,3 +165,35 @@
     echo "<br>";
 ?>
 <!-- ---------------------------------------------------------------------------------------------------------- -->
+<h2>Pratiquer les objets</h2>
+<?php 
+    // require "classes/personne.class.php";
+
+    // $personne = new Personne('Lerouxel', 'Aurelie', 'St Sebastien de Morsent');
+    // echo $personne->getCoord();
+    echo "<br>";
+    echo "------------------------------------------------------------------------------------------------------";
+    echo "<br>";
+?>
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<h2>Pratiquer les objets</h2>
+<?php 
+    require "classes/person.class.php";
+    // $person = new Person();
+    $person = new person ([
+        "firstname" => "Aurelie",
+        "lastname" => "Lerouxel",
+        "adress" => "Mordor"
+    ]);
+    // $person = new Person($data);
+    echo $person->getCoord();
+    // var_dump($person);
+    echo "<br>";
+    echo "------------------------------------------------------------------------------------------------------";
+    echo "<br>";
+?>
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<h2>La poo appliquée à un formulaire</h2>
+<?php 
+    require "classes/formulaire.php";
+?>
