@@ -165,15 +165,15 @@
     echo "<br>";
 ?>
 <!-- ---------------------------------------------------------------------------------------------------------- -->
-<h2>Pratiquer les objets</h2>
+<!-- <h2>Pratiquer les objets</h2> -->
 <?php 
-    // require "classes/personne.class.php";
+    // require "classes/personnes.class.php";
 
     // $personne = new Personne('Lerouxel', 'Aurelie', 'St Sebastien de Morsent');
     // echo $personne->getCoord();
-    echo "<br>";
-    echo "------------------------------------------------------------------------------------------------------";
-    echo "<br>";
+    // echo "<br>";
+    // echo "------------------------------------------------------------------------------------------------------";
+    // echo "<br>";
 ?>
 <!-- ---------------------------------------------------------------------------------------------------------- -->
 <h2>Pratiquer les objets</h2>
@@ -194,13 +194,16 @@
 ?>
 <!-- ---------------------------------------------------------------------------------------------------------- -->
 <h2>La poo appliquée à un formulaire</h2>
+<h2>Héritage</h2>
 <?php 
     require "classes/form.class.php";
+    require "classes/uppgradedForm.class.php";
     
     // $form = new Form (array(
     //     "username" => "Aurélie"
     // ));
     $form = new Form($_POST);
+    // $form1 = new uppgradedForm("");
     // var_dump($form);
     // die();
     // echo $form->input('username');
@@ -211,6 +214,7 @@
     <?php 
         echo $form->setText('username');
         echo $form->setText('password');
+        // echo $form->setRadio("radio", ["Femme" => "1", "Homme" => "0"]);
         echo $form->setSubmit();
         echo "<br>";
         echo "<p>#tu n'es pas de notre galaxie</p>";
@@ -219,4 +223,61 @@
     ?>
 </form>
 <!-- ---------------------------------------------------------------------------------------------------------- -->
-<h2></h2>
+<h2>L'opérateur de résolution de portée</h2>
+<?php 
+// require "classes/renault.class.php";
+    // $clio = new Clio ([
+    //     "door" => 2,
+    //     "color" => 'rouge',
+    //     "price" => 6500
+    // ]);
+    // $clio = new Clio(["door" => Clio::TWO_DOORS, "color" => Clio::COLOR["rouge"]]);
+    // var_dump($clio);
+    // echo "<p>" . $clio->getColor() . "</p>";
+    // echo "<p>" . $clio->getPrice() . "</p>";
+    // echo $clio->getCar();
+    echo "<br>";
+    echo "------------------------------------------------------------------------------------------------------";
+    echo "<br>";
+?>
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<h2>Gérer ses objets en base de données</h2>
+<?php
+    // require "classes/chat.class.php";
+    // $chat = new Chat([
+    //     "name" => "Mimi beauté",
+    //     "age" => "12",
+    //     "sex" => Chat::FEMALE, 
+    //     "color" => Chat::COLOR["tigré"]
+    // ]);
+    echo "<br>";
+    echo "------------------------------------------------------------------------------------------------------";
+    echo "<br>";
+?>
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<h2>Héritage 2</h2>
+<?php 
+    require "classes/personne.class.php";
+    require "classes/adminClient.class.php";
+    require "classes/adminElecteur.class.php";
+
+    $client = new adminClient([
+        "nom" => "Penneflamme",
+        "prenom" => "Katty",
+        "adresse" => "Tu n'es pas de notre galaxie"
+    ]);
+
+    $client->getCoord();
+    // var_dump($client);
+
+    $electeur = new adminElecteur ([
+        "nom" => "Penneflamme",
+        "prenom" => "Katty",
+        "bureau_de_vote" => "Mégara"
+    ]);
+    $electeur->aVoter();
+    echo "<br>";
+    echo "------------------------------------------------------------------------------------------------------";
+    echo "<br>";
+?>
+<!-- ---------------------------------------------------------------------------------------------------------- -->

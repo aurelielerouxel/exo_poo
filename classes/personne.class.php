@@ -1,36 +1,27 @@
 <?php 
     class Personne {
-        private ?string $nom;
-        private ?string $prenom;
-        private ?string $adresse;
+        protected string $nom;
+        protected string $prenom;
 
-        public function setNom(?string $nom) {
+        public function setNom(string $nom) {
             $this->nom = $nom;
         }
-        public function setPrenom(?string $prenom) {
+        public function setPrenom(string $prenom) {
             $this->prenom = $prenom;
-        }
-        public function setAdresse(?string $adresse) {
-            $this->adresse = $adresse;
         }
 
         public function getNom():string {
-            $this->nom;
+            return $this->nom;
         }
         public function getPrenom():string {
-            $this->prenom;
-        }
-        public function getAdresse():string {
-            $this->adresse;
+            return $this->prenom;
         }
 
-        public function getCoord() {
-            return "Je m'appelle " . $this->nom . " " . $this->prenom . " et j'habite au " . $this->adresse . " .";
-        }
-        public function __construct(string $nom, string $prenom, string $adresse) {
-            $this->getNom($nom);
-            $this->getPrenom($prenom);
-            $this->getAdresse($adresse);
+        public function hydrate(array $data) {
+            foreach($data as $key => $value) {
+                $method = "set". ucfirst($key);
+                $this->$method($value);
+            }
         }
     }
 ?>
