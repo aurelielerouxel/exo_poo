@@ -4,6 +4,8 @@
         private $data;
         public $showForm = 'p';
 
+        // protected $formContent;
+
         public function __construct($data = array()) {
             $this->data = $data;
         }
